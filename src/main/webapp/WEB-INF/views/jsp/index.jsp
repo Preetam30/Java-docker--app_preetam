@@ -50,7 +50,7 @@
 
 	<hr>
 	<footer>
-		<p>&copy; srdevops 2022</p>
+		<p>&copy; Mahi_devops 2022</p>
 	</footer>
 </div>
 
