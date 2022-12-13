@@ -1,11 +1,11 @@
 pipeline {
 	agent {	
-		label 'Slave_1'
+		label 'Slave_ubuntu_1'
 		}
 	stages {
 		stage("SCM") {
 			steps {
-				git 'https://github.com/Mahigurjarr/java-docker-app_ronak.git'
+				git 'https://github.com/Mahiigurjarr/Java-docker--app_Mahi.git'
 				}
 			}
 
