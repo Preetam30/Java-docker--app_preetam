@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage("SCM") {
 			steps {
-				git 'https://github.com/Mahiigurjarr/Java-docker--app_Mahi.git'
+				git branch: 'main', url: 'https://github.com/Mahiigurjarr/Java-docker--app_Mahi.git'
 				}
 			}
 
