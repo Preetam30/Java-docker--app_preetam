@@ -40,7 +40,7 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Welcome to DevOps with Mahi❤️, India , in fully automated Jenkins</h2>
+			<h2>Welcome to DevOps with Mahi, India , in fully automated Jenkins</h2>
 			<h3>Contact :-</h3>
 			<h4>mahipalgurjar@hotmail.com </h4>
 			<h4>Mobile: 9079293471 </h4>
