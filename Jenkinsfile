@@ -41,7 +41,7 @@ pipeline {
 		stage('QAT testing') {
 			steps {
 				script{
-			 		retry(5) {
+			 		retry(4) {
 			    		test='${curl --silent http://13.214.186.134:8080/java-web-app/ && grep -iE "mahi|devops"}'
 						echo "${test}"
 			 		}
