@@ -40,7 +40,7 @@ pipeline {
 		stage('QAT testing') {
 			steps {
 			 retry(5) {
-			    sh "curl --silent http://172.31.7.57:8080/java-web-app/ | grep -i "
+			    sh "curl --silent http://172.31.7.57:8080/java-web-app/ | grep -i mahi"
 			 }
 			}
 		}
