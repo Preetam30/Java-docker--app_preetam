@@ -18,7 +18,7 @@ pipeline {
 		stage("Image") {
 			steps {
 				sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-				sh 'sudo docker build . -t java-repo:$BUILD_TAG '
+				sh 'sudo docker build -t java-repo:$BUILD_TAG . '
 				sh 'sudo docker tag java-repo:$BUILD_TAG mahigurjarr/pipeline-java:$BUILD_TAG'
 				}
 			}
@@ -35,7 +35,7 @@ pipeline {
 		}
 		stage("QAT Testing") {
 			steps { 
-				sh 'sudo docker rm -f $(docker ps -a -q)'
+				sh 'sudo docker rm -f $(sudo docker ps -a -q)'
 				sh 'sudo docker run -dit -p 8080:8080 --name web11 mahigurjarr/pipeline-java:$BUILD_TAG'
 			}
 		}
