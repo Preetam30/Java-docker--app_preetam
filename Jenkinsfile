@@ -41,7 +41,7 @@ pipeline {
 		stage('QAT testing') {
 			steps {
 			 retry(5) {
-			    sh 'curl --silent http://13.214.186.134:8080/java-web-app/|grep -iE "mahi|devops"'
+			    sh 'curl --silent http://13.214.186.134:8080/java-web-app/ && grep -iE "mahi|devops"'
 			 }
 			}
 		}
