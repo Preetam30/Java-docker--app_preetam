@@ -23,7 +23,7 @@ pipeline {
 			}
 				
 	
-		stage("Docker Hub") {
+		stage("Docker_Hub") {
 			steps {
 			withCredentials([string(credentialsId: 'Docker_hub_mahi', variable: 'docker_hub_password_var')]) {
 				sh 'sudo docker login -u mahigurjarr -p ${docker_hub_password_var}'
