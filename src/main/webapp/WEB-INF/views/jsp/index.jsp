@@ -40,17 +40,17 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Welcome to DevOps with Mahi, India , in fully automated Jenkins</h2>
+			<h2>Welcome to DevOps with Preetam, India , in fully automated Jenkins</h2>
 			<h3>Contact :-</h3>
-			<h4>mahipalgurjar@hotmail.com </h4>
-			<h4>Mobile: 9079293471 </h4>
+			<h4>Preetamchhipa759@gmail.com </h4>
+			<h4>Mobile: 8385913492 </h4>
 		</div>	
 	</div>
 
 
 	<hr>
 	<footer>
-		<p>&copy; Mahi_devops 2022</p>
+		<p>&copy; Preetam_devops 2022</p>
 	</footer>
 </div>
 
