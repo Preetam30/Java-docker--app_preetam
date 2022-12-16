@@ -9,7 +9,7 @@ pipeline {
 				}
 			}
 
-		stage("Build") {
+		stage("build") {
 			steps {
 				sh 'sudo mvn dependency:purge-local-repository'
 				sh 'sudo mvn clean package'
@@ -23,7 +23,7 @@ pipeline {
 			}
 				
 	
-		stage("Docker_Hub") {
+		stage("docker_Hub") {
 			steps {
 			withCredentials([string(credentialsId: 'docker_hub_preetam', variable: 'docker_hub_password_var')]) {
 				sh 'sudo docker tag java-repo preetam30/pipeline-java'
