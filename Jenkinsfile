@@ -23,7 +23,7 @@ pipeline {
 			}
 				
 	
-		stage("docker_Hub") {
+		stage("Docker_Hub") {
 			steps {
 			withCredentials([string(credentialsId: 'docker_hub_preetam', variable: 'docker_hub_password_var')]) {
 				sh 'sudo docker tag java-repo preetam30/pipeline-java'
