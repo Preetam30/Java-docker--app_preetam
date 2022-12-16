@@ -1,6 +1,6 @@
 pipeline {
 	agent {	
-		label 'Slave_ubuntu_1'
+		label 'pipeline-1'
 		}
 	stages {
 		stage("SCM") {
@@ -18,16 +18,16 @@ pipeline {
 		stage("Image") {
 			steps {
 				sh 'sudo docker build -t java-repo . '
-				sh 'sudo docker tag java-repo mahigurjarr/pipeline-java'
+				sh 'sudo docker tag java-repo preetam30/pipeline-java'
 				}
 			}
 				
 	
 		stage("Docker_Hub") {
 			steps {
-			withCredentials([string(credentialsId: 'Docker_hub_mahi', variable: 'docker_hub_password_var')]) {
-				sh 'sudo docker login -u mahigurjarr -p ${docker_hub_password_var}'
-				sh 'sudo docker push mahigurjarr/pipeline-java'
+			withCredentials([string(credentialsId: 'docker_hub_preetam', variable: 'docker_hub_password_var')]) {
+				sh 'sudo docker tag java-repo preetam30/pipeline-java'
+				sh 'sudo docker push preetam30/pipeline-java'
 				}
 			}	
 
@@ -36,14 +36,14 @@ pipeline {
 			steps { 
 				sh 'sudo docker run -d nginx'
 				sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-				sh 'sudo docker run -dit -p 8080:8080 --name web11 mahigurjarr/pipeline-java'
+				sh 'sudo docker run -dit -p 8080:8080 --name web11 preetam30/pipeline-java'
 			}
 		}
 		stage('QAT testing') {
 			steps {
 				script{
 			 		retry(4) {
-			    		test='${curl --silent http://13.214.186.134:8080/java-web-app/ && grep -iE "mahi|devops"}'
+			    		test='${curl --silent http://65.0.32.12:8080/java-web-app/ && grep -iE "mahi|devops"}'
 						echo "${test}"
 			 		}
 				}    
@@ -60,4 +60,5 @@ pipeline {
 		}
 	}
 }
+
 
