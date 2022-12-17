@@ -58,7 +58,7 @@ pipeline {
 				}
 	 		}
 		}
-		stage("prod Env") {
+		stage("Prod Env") {
 			steps {
 			 sshagent(['preetam-test']) {
 			    sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.233.35.229 sudo docker rm -f $(sudo docker ps -a -q)' 
