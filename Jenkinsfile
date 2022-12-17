@@ -43,7 +43,7 @@ pipeline {
 			steps {
 				script{
 			 		retry(4) {
-			    		test='${curl --silent http://65.0.32.12:8080/java-web-app/ && grep -iE "mahi|devops"}'
+			    		test='${curl --silent http://13.233.35.229:8080/java-web-app/ && grep -iE "preetam|devops"}'
 						echo "${test}"
 			 		}
 				}    
@@ -57,6 +57,14 @@ pipeline {
                	 echo 'userInput: ' + userInput
 				}
 	 		}
+		}
+		stage("Prod Env") {
+			steps {
+			 sshagent(['preetam-test']) {
+			    sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.233.35.229 sudo docker rm -f $(sudo docker ps -a -q)' 
+	                    sh "ssh -o StrictHostKeyChecking=no ubuntu@13.233.35.229 sudo docker run -d  -p  49153:8080  preetam30/pipeline-java"
+				}
+			}
 		}
 	}
 }
